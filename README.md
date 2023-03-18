@@ -102,3 +102,4 @@ The code contains a long string literal with no apparent use case.
 
 * [Can AI help me write tests on legacy code?](https://understandlegacycode.com/blog/can-ai-write-tests-on-legacy-code/) by Nicolas Carlo
 * [Learn prompting](https://learnprompting.org/)
+* [Unofficial ChatGPT VSCode plugin](https://github.com/mpociot/chatgpt-vscode)
