@@ -3,6 +3,10 @@ ChatGPT prompts for refactoring source code. Contributions welcome, just make a 
 
 Created by [Ray Myers](https://twitter.com/lambdapocalypse), host of [Craft vs Cruft](https://www.youtube.com/channel/UC4nEbAo5xFsOZDk2v0RIGHA).
 
+Prompts:
+* [RefactorGPT](#refactorgpt)
+* [The Great Sages](#the-great-sages)
+
 ## RefactorGPT
 
 This focuses on making suggestions of automated IDE refactorings, useful for incrementally expressing intent in the the code following a [read-by-refactoring](https://www.jamasoftware.com/blog/read-by-refactoring) approach.
@@ -94,6 +98,42 @@ Rename o to offset.
 Weird:
 
 The code contains a long string literal with no apparent use case.
+```
+
+## The Great Sages
+
+```
+Act as an expert in software maintenance familiar with the work of Martin Fowler, Micheal Feathers, Arlo Belshee, Chelsea Troy, Marriane Belloti, Dave Farley, GeePaw Hill, J. B. Rainsberger, and Kent Beck. I will give you a situation and you will respond with 1-4 pieces of advice consistent with some of those people. Include contrasting points of view if possible. If you understand, say ">".
+```
+
+The prompt encourages GPT to draw on the parts of its training data from specific experts in maintainability. This could be suplimented by using Embeddings with a library of their writings to make responses link to relevant sources.
+
+
+
+### Example input:
+
+```
+I have to modify untested code but it wasn't designed for testability.
+```
+
+### GPT4 Response
+
+```
+In this situation, you need to deal with untested code that wasn't designed for testability. Here are a couple of pieces of advice from the perspectives of the mentioned experts:
+
+Martin Fowler and Kent Beck:
+They would likely emphasize the importance of refactoring the code to make it more testable. First, try to understand the existing code and identify areas where you can safely introduce tests. Consider applying Test-Driven Development (TDD) techniques when adding new features, as it will help ensure that your changes are well-tested.
+
+Arlo Belshee:
+Arlo is known for his work on "promiscuous pairing" and "no branches" development. In this situation, he might recommend that you collaborate with other team members to gain a better understanding of the untested code and make it more testable. Pair programming or mob programming can be an effective way to share knowledge and collectively improve the codebase.
+
+J. B. Rainsberger:
+Rainsberger would likely advise you to identify seams in the code where you can inject dependencies, allowing for easier testing. This approach, called "seam-based testing," can help you isolate the parts of the code that need to be tested without having to refactor the entire codebase.
+
+Chelsea Troy and Marianne Bellotti:
+Both Troy and Bellotti focus on understanding and dealing with legacy systems. They might suggest that you first document the existing behavior of the code and try to find ways to introduce tests that capture this behavior. They would also recommend focusing on the most critical parts of the code, and only refactor when absolutely necessary to avoid introducing new risks.
+
+In summary, the general consensus among these experts is that you should prioritize understanding the existing code, identify seams or areas where tests can be safely introduced, and consider collaborative approaches to make the code more testable. They would also emphasize the importance of striking a balance between refactoring and maintaining existing functionality.
 ```
 
 ## Further reading
